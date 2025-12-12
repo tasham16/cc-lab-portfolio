@@ -518,6 +518,18 @@ img {
   color: var(--black);
 }
 
+/* Remove bullets for education list on About page */
+.education-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.education-item {
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+}
+
 .about-text em {
   font-style: italic;
   color: var(--blue);
