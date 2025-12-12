@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natasha Mboya • Creative Technologist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Syne:wght@400;500;600;700;800&family=General+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS VARIABLES & RESET */
+      :root {
+        --cream: #fdedd4;
+        --red: #f20815;
+        --green: #11a253;
+        --pink: #fca4e0;
+        --blue: #155fcc;
+        --black: #0a0a0a;
+        --white: #ffffff;
+        --gray: #d9d9d9;
+        --font-display: "Syne", sans-serif;
+        --font-body: "General Sans", sans-serif;
+        --font-alt: "Bricolage Grotesque", sans-serif;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 2rem;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+        --border-width: 4px;
+        --shadow-brutal: 8px 8px 0 var(--black);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--cream);
+        color: var(--black);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* NAVIGATION */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--pink);
+        border-bottom: var(--border-width) solid var(--black);
+        z-index: 1000;
+        background-image: linear-gradient(
+            90deg,
+            var(--black) 1px,
+            transparent 1px
+          ),
+          linear-gradient(var(--black) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+
+      .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: var(--spacing-sm) var(--spacing-md);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--blue);
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.1);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: var(--spacing-md);
+      }
+
+      .nav-link {
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--blue);
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: var(--blue);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* HERO SECTION */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(80px + var(--spacing-lg)) var(--spacing-md)
+          var(--spacing-xl);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-bg-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 30px,
+          rgba(252, 164, 224, 0.3) 30px,
+          rgba(252, 164, 224, 0.3) 60px
+        );
+        z-index: 0;
+        animation: slidePattern 20s linear infinite;
+      }
+
+      @keyframes slidePattern {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(60px);
+        }
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-swahili {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        color: var(--blue);
+        margin-bottom: var(--spacing-sm);
+        font-weight: 500;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(4rem, 12vw, 10rem);
+        font-weight: 800;
+        line-height: 0.9;
+        margin-bottom: var(--spacing-md);
+        color: var(--blue);
+      }
+
+      .title-line {
+        display: block;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .title-line:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .title-line:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+
+      .hero-tags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+        margin-bottom: var(--spacing-md);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 0.6s;
+      }
+
+      .tag {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--black);
+      }
+
+      .tag-separator {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      .hero-tagline {
+        font-family: var(--font-alt);
+        font-size: 1.3rem;
+        color: var(--black);
+        font-weight: 600;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* PROJECTS SECTION */
+      .projects {
+        padding: var(--spacing-xl) var(--spacing-md);
+        background: var(--cream);
+      }
+
+      .projects-header {
+        max-width: 1400px;
+        margin: 0 auto var(--spacing-lg);
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        color: var(--red);
+        line-height: 1;
+      }
+
+      .projects-grid {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+      }
+
+      .project-card {
+        background: var(--white);
+        border: var(--border-width) solid var(--black);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translate(-4px, -4px);
+      }
+
+      .project-card[data-color="red"]:hover {
+        box-shadow: 8px 8px 0 var(--red);
+      }
+
+      .project-card[data-color="green"]:hover {
+        box-shadow: 8px 8px 0 var(--green);
+      }
+
+      .project-card[data-color="blue"]:hover {
+        box-shadow: 8px 8px 0 var(--blue);
+      }
+
+      .project-card[data-color="pink"]:hover {
+        box-shadow: 8px 8px 0 var(--pink);
+      }
+
+      .project-link {
+        display: block;
+      }
+
+      .project-thumbnail {
+        aspect-ratio: 4/3;
+        background: var(--gray);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-bottom: var(--border-width) solid var(--black);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(242, 8, 21, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-view {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .project-info {
+        padding: var(--spacing-md);
+      }
+
+      .project-title {
+        font-family: var(--font-alt);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .project-tags {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: var(--black);
+        color: var(--cream);
+        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--red) 0,
+          var(--red) 20px,
+          var(--green) 20px,
+          var(--green) 40px,
+          var(--blue) 40px,
+          var(--blue) 60px,
+          var(--pink) 60px,
+          var(--pink) 80px
+        );
+      }
+
+      .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+      }
+
+      .footer-text {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: var(--spacing-md);
+      }
+
+      .footer-link {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--cream);
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: var(--red);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 968px) {
+        .nav-container {
+          flex-direction: column;
+          gap: var(--spacing-sm);
+          padding: var(--spacing-sm);
+        }
+
+        .hero {
+          padding-top: calc(120px + var(--spacing-md));
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: clamp(3rem, 15vw, 6rem);
+        }
+
+        .section-title {
+          font-size: clamp(2.5rem, 12vw, 4rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="index.html" class="logo">Natasha Mboya</a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link active">Projects</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="work.html" class="nav-link">Side Quests</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-pattern"></div>
+
+      <div class="hero-content">
+        <p class="hero-swahili">Kila muundo una Hadithi</p>
+
+        <h1 class="hero-title">
+          <span class="title-line">Creative</span>
+          <span class="title-line">Technologist</span>
+        </h1>
+
+        <div class="hero-tags">
+          <span class="tag">Design</span>
+          <span class="tag-separator">×</span>
+          <span class="tag">Technology</span>
+          <span class="tag-separator">×</span>
+          <span class="tag">Cultural Storytelling</span>
+        </div>
+
+        <p class="hero-tagline">Every Design Carries a Story</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+      <div class="projects-header">
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card" data-color="red">
+          <a href="lost-and-found.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/lost-and-found.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Lost and Found</h3>
+              <p class="project-tags">Interactive Art • p5.js</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="green">
+          <a href="face-generator.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/face-generator.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Face Generator</h3>
+              <p class="project-tags">Web Development • NextJS</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="blue">
+          <a href="experimental-clock.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/experimental-clock.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Experimental Clock</h3>
+              <p class="project-tags">Creative Coding • Generative Art</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="pink">
+          <a href="exquisite-corpse.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/exquisite-corpse.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Exquisite Corpse</h3>
+              <p class="project-tags">Fashion Tech • Wearables</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="red">
+          <a href="optical-illusion.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/optical-illusion.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Optical Illusion</h3>
+              <p class="project-tags">Data Visualization • D3.js</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="green">
+          <a href="data-portrait.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/data-portrait.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Data Portrait</h3>
+              <p class="project-tags">Installation • Physical Computing</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card" data-color="blue">
+          <a href="autobiographical-game.html" class="project-link">
+            <div
+              class="project-thumbnail"
+              style="background-image: url('images/autobiographical-game.jpg')"
+            >
+              <div class="project-overlay">
+                <span class="project-view">View Project →</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Autobiographical Game</h3>
+              <p class="project-tags">Game Design • Interactive Narrative</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-pattern"></div>
+        <p class="footer-text">
+          © 2024 Natasha Mboya. Designed & Developed with ❤️
+        </p>
+        <div class="footer-links">
+          <a href="mailto:hello@Natasha Mboya.com" class="footer-link">Email</a>
+          <a href="#" class="footer-link">Instagram</a>
+          <a href="#" class="footer-link">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
