@@ -10,272 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Syne:wght@400;500;600;700;800&family=General+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* CSS VARIABLES & RESET */
-      :root {
-        --cream: #fdedd4;
-        --red: #f20815;
-        --green: #11a253;
-        --pink: #fca4e0;
-        --blue: #155fcc;
-        --black: #0a0a0a;
-        --white: #ffffff;
-        --gray: #d9d9d9;
-        --font-display: "Syne", sans-serif;
-        --font-body: "General Sans", sans-serif;
-        --font-alt: "Bricolage Grotesque", sans-serif;
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 1rem;
-        --spacing-md: 2rem;
-        --spacing-lg: 4rem;
-        --spacing-xl: 6rem;
-        --border-width: 4px;
-        --shadow-brutal: 8px 8px 0 var(--black);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: var(--font-body);
-        background: var(--cream);
-        color: var(--black);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      /* NAVIGATION */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--pink);
-        border-bottom: var(--border-width) solid var(--black);
-        z-index: 1000;
-        background-image: linear-gradient(
-            90deg,
-            var(--black) 1px,
-            transparent 1px
-          ),
-          linear-gradient(var(--black) 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: var(--spacing-sm) var(--spacing-md);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--blue);
-        transition: transform 0.3s ease;
-      }
-
-      .logo:hover {
-        transform: scale(1.1);
-      }
-
-      .back-link {
-        font-family: var(--font-body);
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--blue);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: transform 0.3s ease;
-      }
-
-      .back-link:hover {
-        transform: translateX(-4px);
-      }
-
-      /* PROJECT HEADER */
-      .project-header {
-        padding: calc(80px + var(--spacing-lg)) var(--spacing-md)
-          var(--spacing-md);
-        background: var(--cream);
-      }
-
-      .project-header-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .project-title {
-        font-family: var(--font-display);
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        font-weight: 800;
-        color: var(--blue);
-        line-height: 1.1;
-        margin-bottom: var(--spacing-md);
-      }
-
-      /* PROJECT IFRAME */
-      .project-iframe-section {
-        padding: 0 var(--spacing-md) var(--spacing-lg);
-        background: var(--cream);
-      }
-
-      .iframe-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: var(--white);
-        border: var(--border-width) solid var(--black);
-        box-shadow: var(--shadow-brutal);
-      }
-
-      .iframe-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 100%; /* 1:1 aspect ratio for 600x600 canvas */
-        overflow: hidden;
-        background: var(--gray);
-      }
-
-      .iframe-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      /* PROJECT DESCRIPTION */
-      .project-description {
-        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
-        background: var(--cream);
-      }
-
-      .description-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .description-heading {
-        font-family: var(--font-display);
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--red);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .description-text {
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--black);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .description-text:last-child {
-        margin-bottom: 0;
-      }
-
-      /* FOOTER */
-      .footer {
-        background: var(--black);
-        color: var(--cream);
-        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .footer-pattern {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: repeating-linear-gradient(
-          90deg,
-          var(--red) 0,
-          var(--red) 20px,
-          var(--green) 20px,
-          var(--green) 40px,
-          var(--blue) 40px,
-          var(--blue) 60px,
-          var(--pink) 60px,
-          var(--pink) 80px
-        );
-      }
-
-      .footer-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: var(--spacing-md);
-      }
-
-      .footer-text {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: var(--spacing-md);
-      }
-
-      .footer-link {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--cream);
-        transition: color 0.3s ease;
-      }
-
-      .footer-link:hover {
-        color: var(--red);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 968px) {
-        .nav-container {
-          padding: var(--spacing-sm);
-        }
-
-        .project-header {
-          padding-top: calc(80px + var(--spacing-md));
-        }
-
-        .footer-content {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .project-title {
-          font-size: clamp(2rem, 10vw, 3rem);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="project.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -296,14 +32,7 @@
     <!-- Project Iframe -->
     <section class="project-iframe-section">
       <div class="iframe-container">
-        <div class="iframe-wrapper">
-          <!-- Replace this URL with your actual p5.js sketch URL -->
-          <iframe
-            src="https://editor.p5js.org/bonsquiggs/full/NjXk93GhJ"
-            title="Lost and Found - p5.js Sketch"
-            allow="accelerometer; camera; microphone"
-          ></iframe>
-        </div>
+        <div id="p5-canvas" class="p5-container"></div>
       </div>
     </section>
 
@@ -335,11 +64,348 @@
           © 2024 Natasha Mboya. Designed & Developed with ❤️
         </p>
         <div class="footer-links">
-          <a href="mailto:hello@yara.com" class="footer-link">Email</a>
-          <a href="#" class="footer-link">Instagram</a>
+          <a href="mailto:natasha.mboya@gmail.com" class="footer-link">Email</a>
+
           <a href="#" class="footer-link">LinkedIn</a>
         </div>
       </div>
     </footer>
+    <script>
+      // p5.js sketch
+      let bugs = [];
+      let plants = [];
+      let grassBlades = [];
+
+      function setup() {
+        let canvas = createCanvas(400, 400);
+        canvas.parent("p5-canvas");
+
+        // SETUP BUGS
+        for (let i = 0; i < 15; i++) bugs.push(new Bug());
+
+        // SETUP PLANTS
+        let numRows = 5,
+          cols = 6;
+        let soilTop = height * 0.7;
+        let soilBottom = height * 0.95;
+        let skyBottom = height * 0.25;
+
+        for (let r = 0; r < numRows; r++) {
+          let yBase = map(r, 0, numRows - 1, soilTop + 10, soilBottom);
+          let spacing = width / cols;
+
+          for (let i = 0; i < cols; i++) {
+            let x = i * spacing + spacing / 2 + random(-10, 10);
+            let y = yBase + random(-5, 5);
+
+            let type = r === 0 ? 3 : floor(random(3));
+
+            // Height Constraints
+            let baseH = type === 3 ? 200 : 180;
+            let maxH = y - skyBottom;
+            let scale = random(0.6, min(maxH / baseH, 1.4));
+
+            let p = {
+              x,
+              y,
+              scale,
+              type,
+              swayOffset: i * 20 + r * 50 + random(10),
+            };
+
+            // flower color
+            if (type === 1) {
+              p.color = random([
+                color(255, 50, 50),
+                color(255, 100, 150),
+                color(220, 50, 90),
+              ]);
+            }
+
+            plants.push(p);
+          }
+        }
+
+        // SETUP GRASS
+        for (let i = 0; i < 2000; i++) {
+          let bias = pow(random(), 2); // Cluster in back
+          let y = map(bias, 0, 1, soilTop, height);
+          let s = map(y, soilTop, height, 0.4, 1.0);
+          grassBlades.push({
+            x: random(width),
+            y: y,
+            h: random(20, 45) * s,
+            angle: random(-0.2, 0.2),
+            scale: s,
+            color: color(random(40, 80), random(100, 160), random(30, 60)),
+            sway: { speed: random(0.02, 0.05), phase: random(TWO_PI) },
+          });
+        }
+      }
+
+      function draw() {
+        background(200);
+
+        // BACKGROUND
+        drawGradient(
+          0,
+          height * 0.25,
+          color(135, 206, 250),
+          color(100, 149, 237)
+        ); // Sky
+        drawGradient(
+          height * 0.25,
+          height * 0.2,
+          color(100, 149, 237),
+          color(180, 200, 140)
+        ); // Horizon
+        drawGradient(
+          height * 0.45,
+          height * 0.25,
+          color(180, 200, 140),
+          color(140, 160, 100)
+        ); // Midland
+        drawGradient(
+          height * 0.7,
+          height * 0.3,
+          color(101, 67, 33),
+          color(70, 45, 20)
+        ); // Soil
+
+        // SUN
+        push();
+        translate(width * 0.8, 70);
+        noStroke();
+        fill(255, 255, 0);
+        circle(0, 0, 60);
+        blendMode(ADD);
+        fill(255, 200, 50, 150);
+        rotate(frameCount * 0.01);
+        for (let i = 0; i < 8; i++) {
+          rotate(PI / 4);
+          ellipse(0, 0, 110, 40);
+        }
+        pop();
+
+        // GRASS
+        blendMode(BLEND);
+        noFill();
+        for (let g of grassBlades) {
+          push();
+          translate(g.x, g.y);
+          let sway = sin(frameCount * g.sway.speed + g.sway.phase) * 5;
+          rotate(g.angle + radians(sway));
+          stroke(g.color);
+          strokeWeight(2 * g.scale);
+          beginShape();
+          vertex(0, 0);
+          quadraticVertex(sway, -g.h / 2, sway * 2, -g.h);
+          endShape();
+          pop();
+        }
+
+        // PLANTS (Sorted by depth)
+        plants.sort((a, b) => a.y - b.y);
+        for (let p of plants) {
+          push();
+          translate(p.x, p.y);
+          rotate(radians(sin(frameCount * 0.02 + p.swayOffset) * 4));
+          scale(p.scale);
+          if (p.type === 0) drawCucumber();
+          else if (p.type === 1) drawFlower(p.color);
+          else if (p.type === 2) drawOnion();
+          else drawBanana();
+          pop();
+        }
+
+        // BUGS
+        for (let b of bugs) b.run();
+      }
+
+      // --- HELPER FUNCTIONS ---
+      function drawGradient(y, h, c1, c2) {
+        noStroke();
+        for (let i = y; i <= y + h; i++) {
+          fill(lerpColor(c1, c2, map(i, y, y + h, 0, 1)));
+          rect(0, i, width, 1);
+        }
+      }
+
+      function drawCucumber() {
+        stroke(60, 120, 40);
+        strokeWeight(4);
+        noFill();
+        blendMode(BLEND);
+        // Main Vine
+        beginShape();
+        vertex(0, 0);
+        bezierVertex(-5, -60, 5, -110, 0, -160);
+        endShape();
+        // Leaves
+        noStroke();
+        fill(85, 150, 60, 200);
+        push();
+        translate(-15, -80);
+        rotate(-0.5);
+        ellipse(0, 0, 35, 50);
+        pop();
+        push();
+        translate(15, -120);
+        rotate(0.5);
+        ellipse(0, 0, 35, 50);
+        pop();
+        // Fruit
+        blendMode(BLEND);
+        push();
+        translate(20, -50);
+        rotate(0.1);
+        noStroke();
+        fill(60, 140, 60);
+        ellipse(0, 0, 24, 66);
+        fill(50, 120, 50);
+        blendMode(MULTIPLY);
+        circle(2, 5, 3);
+        circle(-2, -5, 3);
+        pop();
+      }
+
+      function drawFlower(c) {
+        stroke(70, 130, 50);
+        strokeWeight(5);
+        line(0, 0, 0, -140);
+        // Leaves
+        noStroke();
+        fill(90, 160, 70, 200);
+        push();
+        translate(-15, -70);
+        rotate(-0.5);
+        ellipse(0, 0, 45, 28);
+        pop();
+        push();
+        translate(15, -90);
+        rotate(0.5);
+        ellipse(0, 0, 45, 28);
+        pop();
+        // Petals
+        push();
+        translate(0, -140);
+        noStroke();
+        for (let i = 0; i < 8; i++) {
+          push();
+          rotate((PI / 4) * i);
+          fill(c);
+          ellipse(0, -18, 24, 40);
+          pop();
+        }
+        fill(255, 200, 0);
+        circle(0, 0, 28);
+        pop();
+      }
+
+      function drawOnion() {
+        noFill();
+
+        // Leaf 1
+        push();
+        rotate(-0.1);
+        stroke(80, 180, 80);
+        strokeWeight(8);
+        line(0, 0, -5, -170);
+        stroke(120, 220, 120, 150);
+        strokeWeight(2);
+        line(-2, -10, -6, -165); // Highlight
+        pop();
+
+        // Leaf 2
+        push();
+        rotate(0.1);
+        stroke(80, 180, 80);
+        strokeWeight(8);
+        line(0, 0, 5, -160);
+        stroke(120, 220, 120, 150);
+        strokeWeight(2);
+        line(2, -10, 6, -155); // Highlight
+        pop();
+
+        // Leaf 3
+        push();
+        rotate(0.05);
+        stroke(80, 180, 80);
+        strokeWeight(8);
+        line(0, 0, 2, -140);
+        stroke(120, 220, 120, 150);
+        strokeWeight(2);
+        line(1, -10, 3, -135); // Highlight
+        pop();
+
+        // Bulb
+        noStroke();
+        fill(220, 220, 200);
+        ellipse(0, 5, 28, 35);
+      }
+
+      function drawBanana() {
+        // Stalk
+        stroke(60, 110, 40);
+        strokeWeight(10);
+        line(0, 0, 0, -40);
+        translate(0, -40);
+        // Leaves Arrangement
+        let leaves = [
+          { r: -0.5, w: 45, l: 140 },
+          { r: 0, w: 50, l: 160 },
+          { r: 0.5, w: 45, l: 140 },
+        ];
+        for (let l of leaves) {
+          push();
+          rotate(l.r);
+          noStroke();
+          fill(70, 150, 50);
+          beginShape();
+          vertex(0, 0);
+          bezierVertex(l.w, -l.l * 0.3, l.w, -l.l * 0.8, 0, -l.l);
+          bezierVertex(-l.w, -l.l * 0.8, -l.w, -l.l * 0.3, 0, 0);
+          endShape();
+          stroke(90, 170, 60);
+          strokeWeight(3);
+          line(0, 0, 0, -l.l * 0.95);
+          pop();
+        }
+      }
+
+      class Bug {
+        constructor() {
+          this.x = random(width);
+          this.y = random(height / 2, height - 50);
+          this.vx = random(-2, 2);
+          this.vy = random(-1, 1);
+          this.sz = random(5, 8);
+          this.isBee = random() > 0.4;
+        }
+        run() {
+          this.x += this.vx + random(-0.5, 0.5);
+          this.y += this.vy + random(-0.5, 0.5);
+          if (this.x > width) this.x = 0;
+          if (this.x < 0) this.x = width;
+          if (this.y > height - 50 || this.y < 0) this.vy *= -1;
+
+          push();
+          translate(this.x, this.y);
+          noStroke();
+          fill(this.isBee ? color(255, 220, 0) : 50);
+          ellipse(0, 0, this.sz, this.sz);
+          if (this.isBee) {
+            fill(0);
+            rect(-2, -this.sz / 2, 4, this.sz);
+          }
+          blendMode(SCREEN);
+          fill(200, 255, 255, 200);
+          let flap = sin(frameCount * 0.5) * 5;
+          ellipse(-5, -5 + flap, this.sz, this.sz / 2);
+          ellipse(5, -5 + flap, this.sz, this.sz / 2);
+          pop();
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autobiographical Game • Natasha Mboya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Syne:wght@400;500;600;700;800&family=General+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../project.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="../../index.html" class="logo">Natasha Mboya</a>
+        <a href="../../index.html" class="back-link">← Back to Projects</a>
+      </div>
+    </nav>
+
+    <div class="project-page">
+    <!-- Project Header -->
+    <section class="project-header">
+      <div class="project-header-content">
+        <h1 class="project-title">Autobiographical Game</h1>
+      </div>
+    </section>
+
+    <!-- Project Iframe -->
+    <section class="project-iframe-section">
+      <div class="iframe-container">
+        <div id="p5-canvas" class="p5-container"></div>
+    </section>
+
+    <!-- Project Description -->
+    <section class="project-description">
+      <div class="description-content">
+        <h2 class="description-heading">Description</h2>
+        <p class="description-text">
+          A semi-narrative game exploring the surreal, often absurd experience
+          of traveling as a Black woman with an African passport. The game uses
+          symbolic environments and observational humor to portray three
+          distinct phases of this journey: gaining access, being seen as
+          spectacle, and deflecting ignorance while trying to enjoy the
+          destination.
+        </p>
+        <p class="description-text">
+          The player navigates as a small avatar through three interactive
+          scenes, each representing a different emotional landscape. The
+          player's goal is simply to make it through each stage with a sense of
+          self intact. After completing all scenes, the player arrives at a
+          moment of peace at their destination, with the option to restart the
+          experience by planning the next trip.
+        </p>
+      </div>
+     
+    </section>
+     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-pattern"></div>
+        <p class="footer-text">
+          © 2024 Natasha Mboya. Designed & Developed with ❤️
+        </p>
+        <div class="footer-links">
+          <a href="mailto:natasha.mboya@gmail.com" class="footer-link">Email</a>
+
+          <a href="#" class="footer-link">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+     <!-- Constants and utilities -->
+    <script src="src/utils/constants.js"></script>
+    <script src="src/utils/helpers.js"></script>
+    <script src="src/utils/ui.js"></script>
+
+    <!--  Classes  -->
+    <script src="src/classes/Character.js"></script>
+    <script src="src/classes/FormField.js"></script>
+    <script src="src/classes/FormSection.js"></script>
+
+    <!-- Scene managers -->
+    <script src="src/scenes/Scene1_Form.js"></script>
+    <script src="src/scenes/Scene2_Eyes.js"></script>
+    <script src="src/scenes/Scene3_Questions.js"></script>
+
+    <script src="autobiographical-game.js"></script>
+  </body>
+</html>

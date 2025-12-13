@@ -10,272 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Syne:wght@400;500;600;700;800&family=General+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* CSS VARIABLES & RESET */
-      :root {
-        --cream: #fdedd4;
-        --red: #f20815;
-        --green: #11a253;
-        --pink: #fca4e0;
-        --blue: #155fcc;
-        --black: #0a0a0a;
-        --white: #ffffff;
-        --gray: #d9d9d9;
-        --font-display: "Syne", sans-serif;
-        --font-body: "General Sans", sans-serif;
-        --font-alt: "Bricolage Grotesque", sans-serif;
-        --spacing-xs: 0.5rem;
-        --spacing-sm: 1rem;
-        --spacing-md: 2rem;
-        --spacing-lg: 4rem;
-        --spacing-xl: 6rem;
-        --border-width: 4px;
-        --shadow-brutal: 8px 8px 0 var(--black);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: var(--font-body);
-        background: var(--cream);
-        color: var(--black);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      /* NAVIGATION */
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--pink);
-        border-bottom: var(--border-width) solid var(--black);
-        z-index: 1000;
-        background-image: linear-gradient(
-            90deg,
-            var(--black) 1px,
-            transparent 1px
-          ),
-          linear-gradient(var(--black) 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: var(--spacing-sm) var(--spacing-md);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--blue);
-        transition: transform 0.3s ease;
-      }
-
-      .logo:hover {
-        transform: scale(1.1);
-      }
-
-      .back-link {
-        font-family: var(--font-body);
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--blue);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: transform 0.3s ease;
-      }
-
-      .back-link:hover {
-        transform: translateX(-4px);
-      }
-
-      /* PROJECT HEADER */
-      .project-header {
-        padding: calc(80px + var(--spacing-lg)) var(--spacing-md)
-          var(--spacing-md);
-        background: var(--cream);
-      }
-
-      .project-header-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .project-title {
-        font-family: var(--font-display);
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        font-weight: 800;
-        color: var(--blue);
-        line-height: 1.1;
-        margin-bottom: var(--spacing-md);
-      }
-
-      /* PROJECT IFRAME */
-      .project-iframe-section {
-        padding: 0 var(--spacing-md) var(--spacing-lg);
-        background: var(--cream);
-      }
-
-      .iframe-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: var(--white);
-        border: var(--border-width) solid var(--black);
-        box-shadow: var(--shadow-brutal);
-      }
-
-      .iframe-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 100%; /* 1:1 aspect ratio for 600x600 canvas */
-        overflow: hidden;
-        background: var(--gray);
-      }
-
-      .iframe-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      /* PROJECT DESCRIPTION */
-      .project-description {
-        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
-        background: var(--cream);
-      }
-
-      .description-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .description-heading {
-        font-family: var(--font-display);
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--red);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .description-text {
-        font-family: var(--font-body);
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--black);
-        margin-bottom: var(--spacing-md);
-      }
-
-      .description-text:last-child {
-        margin-bottom: 0;
-      }
-
-      /* FOOTER */
-      .footer {
-        background: var(--black);
-        color: var(--cream);
-        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .footer-pattern {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: repeating-linear-gradient(
-          90deg,
-          var(--red) 0,
-          var(--red) 20px,
-          var(--green) 20px,
-          var(--green) 40px,
-          var(--blue) 40px,
-          var(--blue) 60px,
-          var(--pink) 60px,
-          var(--pink) 80px
-        );
-      }
-
-      .footer-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: var(--spacing-md);
-      }
-
-      .footer-text {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: var(--spacing-md);
-      }
-
-      .footer-link {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--cream);
-        transition: color 0.3s ease;
-      }
-
-      .footer-link:hover {
-        color: var(--red);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 968px) {
-        .nav-container {
-          padding: var(--spacing-sm);
-        }
-
-        .project-header {
-          padding-top: calc(80px + var(--spacing-md));
-        }
-
-        .footer-content {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .project-title {
-          font-size: clamp(2rem, 10vw, 3rem);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="project.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -285,7 +21,7 @@
         <a href="index.html" class="back-link">← Back to Projects</a>
       </div>
     </nav>
-
+<div class="project-page">
     <!-- Project Header -->
     <section class="project-header">
       <div class="project-header-content">
@@ -296,15 +32,7 @@
     <!-- Project Iframe -->
     <section class="project-iframe-section">
       <div class="iframe-container">
-        <div class="iframe-wrapper">
-          <!-- Replace this URL with your actual p5.js sketch URL -->
-          <iframe
-            src="https://editor.p5js.org/bonsquiggs/full/Kb1iMaRgu"
-            title="Optical Illusion - p5.js Sketch"
-            allow="accelerometer; camera; microphone"
-          ></iframe>
-        </div>
-      </div>
+        <div id="p5-canvas" class="p5-container"></div>
     </section>
 
     <!-- Project Description -->
@@ -328,6 +56,7 @@
         </p>
       </div>
     </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -337,11 +66,246 @@
           © 2024 Natasha Mboya. Designed & Developed with ❤️
         </p>
         <div class="footer-links">
-          <a href="mailto:hello@yara.com" class="footer-link">Email</a>
-          <a href="#" class="footer-link">Instagram</a>
+          <a href="mailto:natasha.mboya@gmail.com" class="footer-link">Email</a>
+
           <a href="#" class="footer-link">LinkedIn</a>
         </div>
       </div>
     </footer>
+    <script>
+      const PALETTE = {
+  red: "#dd1c1a",
+  blue: "#11296b",
+  orange: "#f97316",
+  brown: "#a63c06",
+  yellow: "#ffcb05",
+  green: "#7fb800",
+  lblue: "#67e8f9",
+  white: "#e6e8e6",
+  black: "#080708",
+  gray: "#bfbdc1",
+  bg: "#101935"
+};
+
+const CYCLE_COLORS = [
+ "#dd1c1a",
+ "#a63c06",
+ "#11296b",
+ "#ffcb05",
+ "#7fb800",
+]
+
+const BG   = "#0b0f4a";   // deep navy
+const INK  = "#f7b820";   // gold
+const ACCENT = "#dd1c1a";
+// const INK   = "#0b0f4a";   // deep navy
+// const BG  = "#f7b820";   // gold
+let W    = 3;         
+let ANGLE = 0.1;
+let maxR = 300;
+let PATTERN = 0 
+
+
+
+function setup() {
+    let canvas = createCanvas(600, 600);
+        canvas.parent("p5-canvas");
+  stroke(INK);
+  noFill();
+  strokeCap(ROUND);
+  angleMode(RADIANS)
+  // noLoop()
+}
+function draw() {
+  background(BG);
+  let cx = width / 2;
+  let cy = height /2  
+  
+  
+  drawIllusionCircles(0,0, ANGLE)
+  drawIllusionCircles(maxR/2,maxR/2, ANGLE)
+  
+  drawLabel()
+
+  
+  
+  ANGLE += 0.002
+}
+
+function drawCircleBorder() {
+  push()
+      fill(BG)
+      strokeWeight(0.5)
+      circle(0,0, maxR)
+    pop()
+}
+
+function drawIllusionCircles(x, y, angle) {
+  let currY = y;
+  let currX = x;
+  let dir = 1;
+  
+  for (let i = 0; i < 10; i++) {
+    
+    push()
+      translate(currX + maxR * ( i%3), currY)
+      drawCircleBorder()
+      drawPattern(dir*angle)  
+      if (i != 0 && i % 3 === 0) {
+         currY += maxR
+         angle += 0.0001
+      }
+    pop()
+    
+    dir *= -1 // change directions
+      // ANGLE += 0.0002
+  }
+  
+      
+
+  stroke(INK)
+  strokeWeight(2)
+
+}
+
+function drawPattern(angle) {
+  
+  switch (PATTERN) {
+    case 0: 
+      drawPattern1(angle)
+      break;
+    case 1: 
+      drawPattern2(angle)
+      break;
+    case 2: 
+      drawPattern3(angle)
+      break;
+    case 3: 
+    drawPattern4(angle)
+      break;
+    default:
+      break;
+}
+}
+function drawPattern1(angle) {
+      for (i = 15; i < (maxR - 5); i +=20) {
+              rotate(angle)
+
+      stroke(INK)
+      // strokeWeight(i* 0.01)
+      strokeWeight(W)
+      ellipse(0, 0, i + 10, i)
+        
+      
+
+
+      stroke(ACCENT)
+      strokeWeight(0.5)
+        ellipse(0, 0, i )
+      
+      stroke(INK)
+      strokeWeight(W)
+      ellipse(0, 0, i, i + 10)
+      stroke(BG)
+      strokeWeight(W -1)
+      circle(0, 0, i + 10 )
+
+  }
+}
+
+function drawPattern2(angle) {
+
+    for (i = 10; i < maxR; i +=15) {
+      rotate(angle)
+
+      let r = maxR - i
+      // fill(BG)
+      // circle(0, 0, r )
+      
+      noFill()
+      
+      stroke(INK)
+      ellipse(0, 0, r + 10, r)
+       
+      
+      stroke(ACCENT)
+      ellipse(0, 0, i, i+ 10)
+
+  }
+}
+
+function drawPattern3(angle) {
+
+    for (i = 10; i < maxR; i +=15) {
+      rotate(angle)
+      let r = maxR - i
+      noFill()
+      strokeWeight(i * 0.02)
+      
+      if(i % 2 == 0) {
+              stroke(INK)
+      }
+      else {
+        stroke(ACCENT)
+      }
+      // Draw in reverse order with fill instead of stroke
+      ellipse(0, 0, r + 15, r)
+  }
+}
+
+function drawPattern4(angle) {
+
+    for (i = 10; i < maxR; i +=15) {
+      let r = i
+
+      rotate(angle)
+
+      strokeWeight(i * 0.01)
+
+      stroke(BG)
+      ellipse(0, 0, r + 15, r)
+      
+      stroke(INK)
+      circle(0,0, r)
+
+      // reverse rotate
+      push()
+      rotate(-angle)
+
+      strokeWeight(1+ (i * 0.01))
+
+      stroke(INK)
+      ellipse(0, 0, r, r + 15)
+      
+      stroke(BG)
+      circle(0,0, r)
+      pop()
+  }
+}
+
+function drawLabel() {
+  push();
+  noStroke();
+  fill(120);
+  rect(10, 10, 350, 28, 6);
+  fill("#ffffff");
+  textSize(16);
+  textAlign(LEFT, CENTER);
+  text("Press 'SPACE' to toggle through the illusions", 20, 24);
+
+  pop();
+}
+
+
+
+function keyPressed() {
+  if (key === " ") {
+    PATTERN = (PATTERN + 1) % 4
+    
+  }
+}
+
+
+    </script>
   </body>
 </html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 794.83 146.33">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-4, .cls-5, .cls-7 {
+        font-family: Nohemi-Medium, Nohemi;
+        font-size: 30.57px;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2, .cls-3, .cls-8, .cls-9, .cls-10 {
+        font-family: Nohemi-Bold, Nohemi;
+        font-size: 36.68px;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-13 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2-2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1-2">
+      <g class="cls-6">
+        <text class="cls-10" transform="translate(161.8 31.46) scale(.98 1)"><tspan x="0" y="0" xml:space="preserve">  VI</tspan></text>
+        <text class="cls-2" transform="translate(212.56 31.46) scale(.98 1)"><tspan x="0" y="0">S</tspan></text>
+        <text class="cls-10" transform="translate(236.45 31.46) scale(.98 1)"><tspan x="0" y="0">A A</tspan></text>
+        <text class="cls-10" transform="translate(296.57 31.46) scale(.98 1)"><tspan class="cls-12" x="0" y="0">P</tspan><tspan class="cls-11" x="24.56" y="0">P</tspan></text>
+        <text class="cls-10" transform="translate(344.78 31.46) scale(.98 1)"><tspan x="0" y="0">L</tspan></text>
+        <text class="cls-10" transform="translate(364.04 31.46) scale(.98 1)"><tspan x="0" y="0">I</tspan></text>
+        <text class="cls-9" transform="translate(372.87 31.46) scale(.98 1)"><tspan x="0" y="0">C</tspan></text>
+        <text class="cls-8" transform="translate(397.65 31.46) scale(.98 1)"><tspan x="0" y="0">A</tspan></text>
+        <text class="cls-10" transform="translate(420.8 31.46) scale(.98 1)"><tspan x="0" y="0">TION </tspan></text>
+        <text class="cls-3" transform="translate(513.78 31.46) scale(.98 1)"><tspan x="0" y="0">F</tspan></text>
+        <text class="cls-10" transform="translate(532.96 31.46) scale(.98 1)"><tspan x="0" y="0" xml:space="preserve">ORM  </tspan></text>
+      </g>
+      <g class="cls-6">
+        <text class="cls-5" transform="translate(224.45 70.72) scale(.98 1)"><tspan x="0" y="0">R</tspan></text>
+        <text class="cls-1" transform="translate(243.84 70.72) scale(.98 1)"><tspan x="0" y="0">epublic </tspan></text>
+        <text class="cls-4" transform="translate(351.63 70.72) scale(.98 1)"><tspan x="0" y="0">o</tspan></text>
+        <text class="cls-1" transform="translate(369.21 70.72) scale(.98 1)"><tspan x="0" y="0">f Bu</tspan></text>
+        <text class="cls-7" transform="translate(426.62 70.72) scale(.98 1)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-1" transform="translate(438.43 70.72) scale(.98 1)"><tspan x="0" y="0">e</tspan></text>
+        <text class="cls-1" transform="translate(455.8 70.72) scale(.98 1)"><tspan x="0" y="0">auc</tspan></text>
+        <text class="cls-7" transform="translate(508.65 70.72) scale(.98 1)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-1" transform="translate(520.47 70.72) scale(.98 1)"><tspan x="0" y="0">a</tspan></text>
+        <text class="cls-5" transform="translate(538.27 70.72) scale(.98 1)"><tspan x="0" y="0">c</tspan></text>
+        <text class="cls-1" transform="translate(554.91 70.72) scale(.98 1)"><tspan x="0" y="0">y</tspan></text>
+      </g>
+      <line class="cls-13" x1="2.03" y1="103.02" x2="794.83" y2="103.02"/>
+      <g class="cls-6">
+        <text class="cls-1" transform="translate(0 138.91) scale(.98 1)"><tspan x="0" y="0">S</tspan></text>
+        <text class="cls-1" transform="translate(19.96 138.91) scale(.98 1)"><tspan x="0" y="0">e</tspan></text>
+        <text class="cls-1" transform="translate(37.48 138.91) scale(.98 1)"><tspan x="0" y="0">c</tspan></text>
+        <text class="cls-1" transform="translate(54.76 138.91) scale(.98 1)"><tspan x="0" y="0" xml:space="preserve">tion  </tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

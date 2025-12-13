@@ -11,7 +11,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://use.typekit.net/bga1smw.css" />
-    <style>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <style>
       /* CSS VARIABLES & RESET */
       :root {
         --cream: #fdedd4;
@@ -448,7 +449,7 @@
           font-size: clamp(2.5rem, 12vw, 4rem);
         }
       }
-    </style>
+    </style> -->
   </head>
   <body>
     <!-- Navigation -->
@@ -458,7 +459,7 @@
         <div class="nav-links">
           <a href="index.html" class="nav-link active">Projects</a>
           <a href="about.html" class="nav-link">About</a>
-          <a href="work.html" class="nav-link">Side Quests</a>
+          <a href="index-test.html" class="nav-link">Side Quests</a>
         </div>
       </div>
     </nav>
@@ -468,21 +469,46 @@
       <div class="hero-bg-pattern"></div>
 
       <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="title-line">Creative</span>
-          <span class="title-line">Technologist</span>
-        </h1>
+        <div class="hero-quote">
+          <span class="hero-swahili italic">
+            &mdash; Kila muundo una Hadithi</span
+          >
+          <span class="hero-tagline italic">Every Design Carries a Story</span>
+        </div>
 
-        <div class="hero-tags">
-          <span class="tag">Design</span>
+        <div
+          class="hero-tags"
+          aria-label="Working across design, technology, and cultural storytelling"
+        >
+          <span class="hero-tags__label">At the intersection of</span>
+
+          <span class="hero-tags__rotator" aria-hidden="true">
+            <span class="rotator__word">Design</span>
+            <span class="rotator__word">Technology</span>
+            <span class="rotator__word">Cultural Storytelling</span>
+          </span>
+        </div>
+
+        <!-- <div class="hero-tags" aria-live="polite">
+          <span class="hero-tags__label">At the intersection of</span>
+          <span class="hero-tags__word" id="cycling-word">Design</span> -->
+        <!-- <span class="tag">Design</span>
           <span class="tag-separator">×</span>
           <span class="tag">Technology</span>
           <span class="tag-separator">×</span>
-          <span class="tag">Cultural Storytelling</span>
-        </div>
-
-        <p class="hero-swahili">Kila muundo una Hadithi</p>
-        <p class="hero-tagline">Every Design Carries a Story</p>
+          <span class="tag">Cultural Storytelling</span> -->
+        <!-- </div> -->
+        <h1 class="hero-title">
+          <span class="title-line">Creative</span>
+          <span class="title-line">
+            <!-- Technologist -->
+            <img
+              class="title-outline"
+              src="images/technologist.png"
+              alt="Technologist"
+            />
+          </span>
+        </h1>
       </div>
     </section>
 
@@ -596,7 +622,10 @@
         </article>
 
         <article class="project-card" data-color="blue">
-          <a href="autobiographical-game.html" class="project-link">
+          <a
+            href="p5-sketches/autobiographical-game/autobiographical-game.html"
+            class="project-link"
+          >
             <div
               class="project-thumbnail"
               style="background-image: url('images/autobiographical-game.jpg')"
@@ -623,10 +652,49 @@
         </p>
         <div class="footer-links">
           <a href="mailto:hello@Natasha Mboya.com" class="footer-link">Email</a>
-          <a href="#" class="footer-link">Instagram</a>
+
           <a href="#" class="footer-link">LinkedIn</a>
         </div>
       </div>
     </footer>
   </body>
+  <script>
+    const colors = ["#ff3b30", "#0b57d0", "#111"];
+    const words = ["Design", "Technology", "Cultural Storytelling"];
+
+    const el = document.getElementById("cycling-word");
+    let index = 0;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    function cycleWord() {
+      el.classList.remove("is-visible");
+
+      if (!prefersReducedMotion) {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(6px)";
+      }
+
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        el.textContent = words[index];
+
+        if (!prefersReducedMotion) {
+          el.style.opacity = 1;
+          el.style.transform = "translateY(0)";
+        }
+
+        el.classList.add("is-visible");
+        el.style.color = colors[index];
+      }, 300);
+    }
+
+    // Initial state
+    el.classList.add("is-visible");
+    el.style.color = colors[index];
+
+    setInterval(cycleWord, 2400);
+  </script>
 </html>
